@@ -14,10 +14,6 @@ const client = new Discord.Client();
 const queue = new Map();
 
 
-//const token = 'ODE1NTI3NDAyODQyMjI2NzEw.YDttFA.C7OImRIapzQpa8AwiOGLgzPlQyU';
-//client.login(token);
-client.login(process.env.token);
-
 client.once('ready', () => {
     console.log('XeNDeR Bot is running');
 });
@@ -111,7 +107,9 @@ client.on("message", async(message) => {
             return message.channel.send("There is nothing to skip!");
         serverQueue.connection.dispatcher.end();
     }
-})
+});
+
+client.login(process.env.token);
  
         //client.login("Client token here")
 
