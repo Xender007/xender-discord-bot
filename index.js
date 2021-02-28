@@ -118,13 +118,13 @@ client.on("message", async(message) => {
             return message.channel.send("There is nothing to skip!");
         serverQueue.connection.dispatcher.end();
     }
-    function help (message) {
-        return message.channel.send('!play song-name -> Type !play then add song name play the song. \n' +
-                                    '!stop -> Stop the song. \n' +
-                                    '!skip -> Skip the song. \n' +
-                                    '!ping -> Get bot ping.');
+    // function help (message) {
+    //     return message.channel.send('!play song-name -> Type !play then add song name play the song. \n' +
+    //                                 '!stop -> Stop the song. \n' +
+    //                                 '!skip -> Skip the song. \n' +
+    //                                 '!ping -> Get bot ping.');
         
-    }
+    // }
     function ping (message) {
         return message.channel.send(`🏓Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
     }
