@@ -48,7 +48,7 @@ client.on("message", async(message) => {
     }
  
     async function execute(message, serverQueue){
-        let vc = message.member.voice.channel;
+        let vc = await message.member.voice.channel;
         if(!vc){
             return message.channel.send("Please join a voice chat first");
         }else{
@@ -117,7 +117,10 @@ client.on("message", async(message) => {
         serverQueue.connection.dispatcher.end();
     }
     function help (message) {
-        return message.channel.send('!play song-name -> Type !play then add song name play the song. \n' +
+        if(!message.member.voice.channel) {
+            return message.channel.send("You need to join the voice chat first");
+        }
+        return message.channel.reply('!play song-name -> Type !play then add song name play the song. \n' +
                                     '!stop -> Stop the song. \n' +
                                     '!skip -> Skip the song. \n' +
                                     '!ping -> Get bot ping.');
