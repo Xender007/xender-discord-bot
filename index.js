@@ -19,7 +19,10 @@ client.once('ready', () => {
 });
 
 // client.user.setActivity("Type !play"); 
-client.user.setStatus('online', 'Type !play'); 
+client.user.setActivity("with depression", {
+    type: "STREAMING",
+    url: "https://www.twitch.tv/monstercat"
+  });
  
 client.on("message", async(message) => {
     const prefix = '!';
