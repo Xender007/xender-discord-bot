@@ -49,7 +49,6 @@ client.on("message", async(message) => {
  
     async function execute(message, serverQueue){
         let vc = message.member.voice.channel;
-        if(command === 'play'){
             if(!vc){
                 return message.channel.send("Please join a voice chat first");
             }else{
@@ -87,8 +86,7 @@ client.on("message", async(message) => {
                     serverQueue.songs.push(song);
                     return message.channel.send(`The song has been added ${song.url}`);
                 }
-            }
-        }   
+            } 
     }
     function play(guild, song){
         const serverQueue = queue.get(guild.id);
