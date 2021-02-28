@@ -117,15 +117,14 @@ client.on("message", async(message) => {
         serverQueue.connection.dispatcher.end();
     }
     function help (message) {
-
-        message.channel.send("!play song-name -> Type !play then add song name play the song.");
-        message.channel.send("!stop -> Stop the song.");
-        message.channel.send("!skip -> Skip the song.");
-        message.channel.send("!ping -> Get bot ping.");
+       return message.channel.send(`!play song-name -> Type !play then add song name play the song. \n
+                             !stop -> Stop the song. \n
+                             !skip -> Skip the song. \n
+                             !ping -> Get bot ping.`);
         
     }
     function ping (message) {
-        message.channel.send(`🏓Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
+        return message.channel.send(`🏓Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
     }
     
 });
