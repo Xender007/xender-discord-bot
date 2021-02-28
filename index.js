@@ -117,10 +117,11 @@ client.on("message", async(message) => {
         serverQueue.connection.dispatcher.end();
     }
     function help (message) {
-       return message.channel.send(`!play song-name -> Type !play then add song name play the song. \n
-                             !stop -> Stop the song. \n
-                             !skip -> Skip the song. \n
-                             !ping -> Get bot ping.`);
+       if(!message.member.voice.channel || message.member.voice.channel) 
+            return message.channel.send('!play song-name -> Type !play then add song name play the song. \n' +
+                                        '!stop -> Stop the song. \n' +
+                                        '!skip -> Skip the song. \n' +
+                                        '!ping -> Get bot ping.');
         
     }
     function ping (message) {
