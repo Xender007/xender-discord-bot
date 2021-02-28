@@ -17,6 +17,8 @@ const queue = new Map();
 client.once('ready', () => {
     console.log('XeNDeR Bot is running');
 });
+
+client.user.setActivity("Type !play");
  
 client.on("message", async(message) => {
     const prefix = '!';
