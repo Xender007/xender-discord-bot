@@ -48,45 +48,47 @@ client.on("message", async(message) => {
     }
  
     async function execute(message, serverQueue){
-        let vc = await message.member.voice.channel;
-        if(!vc){
-            return message.channel.send("Please join a voice chat first");
-        }else{
-            let result = await searcher.search(args.join(" "), { type: "video" })
-            const songInfo = await ytdl.getInfo(result.first.url)
- 
-            let song = {
-                title: songInfo.videoDetails.title,
-                url: songInfo.videoDetails.video_url
-            };
- 
-            if(!serverQueue){
-                const queueConstructor = {
-                    txtChannel: message.channel,
-                    vChannel: vc,
-                    connection: null,
-                    songs: [],
-                    volume: 10,
-                    playing: true
-                };
-                queue.set(message.guild.id, queueConstructor);
- 
-                queueConstructor.songs.push(song);
- 
-                try{
-                    let connection = await vc.join();
-                    queueConstructor.connection = connection;
-                    play(message.guild, queueConstructor.songs[0]);
-                }catch (err){
-                    console.error(err);
-                    queue.delete(message.guild.id);
-                    return message.channel.send(`Unable to join the voice chat ${err}`)
-                }
+        let vc = message.member.voice.channel;
+        if(command === 'play'){
+            if(!vc){
+                return message.channel.send("Please join a voice chat first");
             }else{
-                serverQueue.songs.push(song);
-                return message.channel.send(`The song has been added ${song.url}`);
+                let result = await searcher.search(args.join(" "), { type: "video" })
+                const songInfo = await ytdl.getInfo(result.first.url)
+    
+                let song = {
+                    title: songInfo.videoDetails.title,
+                    url: songInfo.videoDetails.video_url
+                };
+    
+                if(!serverQueue){
+                    const queueConstructor = {
+                        txtChannel: message.channel,
+                        vChannel: vc,
+                        connection: null,
+                        songs: [],
+                        volume: 10,
+                        playing: true
+                    };
+                    queue.set(message.guild.id, queueConstructor);
+    
+                    queueConstructor.songs.push(song);
+    
+                    try{
+                        let connection = await vc.join();
+                        queueConstructor.connection = connection;
+                        play(message.guild, queueConstructor.songs[0]);
+                    }catch (err){
+                        console.error(err);
+                        queue.delete(message.guild.id);
+                        return message.channel.send(`Unable to join the voice chat ${err}`)
+                    }
+                }else{
+                    serverQueue.songs.push(song);
+                    return message.channel.send(`The song has been added ${song.url}`);
+                }
             }
-        }
+        }   
     }
     function play(guild, song){
         const serverQueue = queue.get(guild.id);
