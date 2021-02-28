@@ -16,14 +16,10 @@ const queue = new Map();
 
 client.on('ready', () => {
     console.log('XeNDeR Bot is running');
-    client.user.setActivity("Type !play");
+    client.user.setActivity("!help - get commands.");
 });
 
-//  
-// client.user.setActivity("with depression", {
-//     type: "STREAMING",
-//     url: "https://www.twitch.tv/monstercat"
-//   });
+
  
 client.on("message", async(message) => {
     const prefix = '!';
@@ -42,6 +38,12 @@ client.on("message", async(message) => {
             break;
         case 'skip':
             skip(message, serverQueue);
+            break;
+        case 'help':
+            help(message);
+            break;
+        case 'ping':
+            ping(message);
             break;
     }
  
@@ -114,15 +116,20 @@ client.on("message", async(message) => {
             return message.channel.send("There is nothing to skip!");
         serverQueue.connection.dispatcher.end();
     }
+    function help (message) {
+
+        message.channel.send("!play song-name -> Type !play then add song name play the song.");
+        message.channel.send("!stop -> Stop the song.");
+        message.channel.send("!skip -> Skip the song.");
+        message.channel.send("!ping -> Get bot ping.");
+        
+    }
+    function ping (message) {
+        message.channel.send(`🏓Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
+    }
+    
 });
 
 client.login(process.env.token);
  
-        //client.login("Client token here")
-
-        // if(command === 'ping')
-        // {
-        //     message.channel.send(`🏓Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
-        //     //message.channel.send('Fucking Bitch Boros Suck my Dick');
-        // }
         
