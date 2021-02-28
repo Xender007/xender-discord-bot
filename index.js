@@ -14,15 +14,16 @@ const client = new Discord.Client();
 const queue = new Map();
 
 
-client.once('ready', () => {
+client.on('ready', () => {
     console.log('XeNDeR Bot is running');
+    client.user.setActivity("Type !play");
 });
 
-// client.user.setActivity("Type !play"); 
-client.user.setActivity("with depression", {
-    type: "STREAMING",
-    url: "https://www.twitch.tv/monstercat"
-  });
+//  
+// client.user.setActivity("with depression", {
+//     type: "STREAMING",
+//     url: "https://www.twitch.tv/monstercat"
+//   });
  
 client.on("message", async(message) => {
     const prefix = '!';
