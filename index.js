@@ -18,7 +18,8 @@ client.once('ready', () => {
     console.log('XeNDeR Bot is running');
 });
 
-client.user.setActivity("Type !play");
+// client.user.setActivity("Type !play"); 
+client.user.setStatus('online', 'Type !play'); 
  
 client.on("message", async(message) => {
     const prefix = '!';
