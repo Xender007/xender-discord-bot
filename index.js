@@ -5,7 +5,7 @@ const ytdl = require('ytdl-core');
 const { YTSearcher } = require('ytsearcher');
  
 const searcher = new YTSearcher({
-    key: "Youtube key here",
+    key: process.env.youtube_api,
     revealed: true
 });
  
@@ -14,9 +14,9 @@ const client = new Discord.Client();
 const queue = new Map();
 
 
-const token = 'ODE1NTI3NDAyODQyMjI2NzEw.YDttFA.C7OImRIapzQpa8AwiOGLgzPlQyU';
-client.login(token);
- 
+//const token = 'ODE1NTI3NDAyODQyMjI2NzEw.YDttFA.C7OImRIapzQpa8AwiOGLgzPlQyU';
+//client.login(token);
+client.login(process.env.token);
 
 client.once('ready', () => {
     console.log('XeNDeR Bot is running');
