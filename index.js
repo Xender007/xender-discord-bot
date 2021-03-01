@@ -133,7 +133,7 @@ client.on("message", async(message) => {
             fields: [
                 {
                     name: 'Song Commands',
-                    value: '`!play`,`!skip`,`!stop`',
+                    value: '`!play, !skip, !stop`',
                     inline: true,
                 },
                 {
