@@ -91,11 +91,11 @@ client.on("message", async(message) => {
     function play(guild, song){
         const serverQueue = queue.get(guild.id);
         if(!song){
-            setTimeout(function(){
+            //setTimeout(function(){
             serverQueue.vChannel.leave();
             queue.delete(guild.id);
             return;
-            }, 10000);
+            //}, 10000);
         }
         const dispatcher = serverQueue.connection
             .play(ytdl(song.url))
@@ -122,10 +122,10 @@ client.on("message", async(message) => {
         const exampleEmbed = {
             color: 0x0099ff,
             title: `XeNDeR's BoT Commands`,
-            url: 'https://scontent.fccu3-1.fna.fbcdn.net/v/t1.15752-9/102319491_282204086297974_8944907308232605696_n.jpg?_nc_cat=104&ccb=3&_nc_sid=ae9488&_nc_ohc=odmekm6DoLMAX_S9qvv&_nc_ht=scontent.fccu3-1.fna&oh=d1fc2cc3b9b4012702ddaef1ec7fe615&oe=60616D63',
+            url: 'https://github.com/Xender007/xender-discord-bot',
             author: {
                 name: `XeNDeR's BoT Code`,
-                icon_url: 'https://github.com/Xender007/xender-discord-bot',
+                icon_url: 'https://scontent.fccu3-1.fna.fbcdn.net/v/t1.15752-9/102319491_282204086297974_8944907308232605696_n.jpg?_nc_cat=104&ccb=3&_nc_sid=ae9488&_nc_ohc=odmekm6DoLMAX_S9qvv&_nc_ht=scontent.fccu3-1.fna&oh=d1fc2cc3b9b4012702ddaef1ec7fe615&oe=60616D63',
             },
             description: `Welcome XeNDeR's Server! Hope you having a great day`,
             thumbnail: {
