@@ -168,7 +168,7 @@ client.on("message", async(message) => {
             },
         };
         
-        return channel.send({ embed: exampleEmbed });
+        return message.channel.send({ embed: exampleEmbed });
     }
     function ping (message) {
         return message.channel.send(`🏓Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`);
