@@ -48,7 +48,6 @@ client.on("message", async(message) => {
     }
  
     async function execute(message, serverQueue){
-        //if(command === 'play'){
         let vc = message.member.voice.channel;
             if(!vc){
                 return message.channel.send("Please join a voice chat first");
@@ -88,7 +87,6 @@ client.on("message", async(message) => {
                     return message.channel.send(`The song has been added ${song.url}`);
                 }
             }
-        //}
     }
     function play(guild, song){
         const serverQueue = queue.get(guild.id);
@@ -121,50 +119,41 @@ client.on("message", async(message) => {
     function help (message) {
         const exampleEmbed = {
             color: 0x0099ff,
-            title: 'Some title',
-            url: 'https://discord.js.org',
+            title: `XeNDeR's BoT Plugin Commands`,
+            url: 'https://scontent.fccu3-1.fna.fbcdn.net/v/t1.15752-9/102319491_282204086297974_8944907308232605696_n.jpg?_nc_cat=104&ccb=3&_nc_sid=ae9488&_nc_ohc=odmekm6DoLMAX_S9qvv&_nc_ht=scontent.fccu3-1.fna&oh=d1fc2cc3b9b4012702ddaef1ec7fe615&oe=60616D63',
             author: {
-                name: 'Some name',
-                icon_url: 'https://i.imgur.com/wSTFkRM.png',
-                url: 'https://discord.js.org',
+                name: `XeNDeR's BoT Code`,
+                icon_url: 'https://scontent.fccu3-1.fna.fbcdn.net/v/t1.15752-9/102319491_282204086297974_8944907308232605696_n.jpg?_nc_cat=104&ccb=3&_nc_sid=ae9488&_nc_ohc=odmekm6DoLMAX_S9qvv&_nc_ht=scontent.fccu3-1.fna&oh=d1fc2cc3b9b4012702ddaef1ec7fe615&oe=60616D63',
+                url: 'https://github.com/Xender007/xender-discord-bot',
             },
-            description: 'Some description here',
+            description: `Welcome XeNDeR's Server! Hope you having a great day`,
             thumbnail: {
-                url: 'https://i.imgur.com/wSTFkRM.png',
+                url: 'https://scontent.fccu3-1.fna.fbcdn.net/v/t1.15752-9/102319491_282204086297974_8944907308232605696_n.jpg?_nc_cat=104&ccb=3&_nc_sid=ae9488&_nc_ohc=odmekm6DoLMAX_S9qvv&_nc_ht=scontent.fccu3-1.fna&oh=d1fc2cc3b9b4012702ddaef1ec7fe615&oe=60616D63',
             },
             fields: [
                 {
-                    name: 'Regular field title',
-                    value: 'Some value here',
-                },
-                {
-                    name: '\u200b',
-                    value: '\u200b',
-                    inline: false,
-                },
-                {
-                    name: 'Inline field title',
-                    value: 'Some value here',
+                    name: 'Song Commands',
+                    value: '`!play` , `!skip` , `!stop`',
                     inline: true,
                 },
                 {
-                    name: 'Inline field title',
-                    value: 'Some value here',
+                    name: 'Test Bot Ping',
+                    value: '`!ping`',
                     inline: true,
                 },
                 {
-                    name: 'Inline field title',
-                    value: 'Some value here',
+                    name: 'Other Commands',
+                    value: '`will add new commands soon!`',
                     inline: true,
                 },
             ],
-            image: {
-                url: 'https://i.imgur.com/wSTFkRM.png',
-            },
+            // image: {
+            //     url: 'https://i.imgur.com/wSTFkRM.png',
+            // },
             timestamp: new Date(),
             footer: {
-                text: 'Some footer text here',
-                icon_url: 'https://i.imgur.com/wSTFkRM.png',
+                text: 'Bot Creator -> **__XeNDeR__**',
+                icon_url: 'https://scontent.fccu3-1.fna.fbcdn.net/v/t1.15752-9/102319491_282204086297974_8944907308232605696_n.jpg?_nc_cat=104&ccb=3&_nc_sid=ae9488&_nc_ohc=odmekm6DoLMAX_S9qvv&_nc_ht=scontent.fccu3-1.fna&oh=d1fc2cc3b9b4012702ddaef1ec7fe615&oe=60616D63',
             },
         };
         
