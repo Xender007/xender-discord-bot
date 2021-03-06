@@ -13,8 +13,9 @@ const client = new Discord.Client();
  
 const queue = new Map();
 
-
+//This is on ready function : 
 client.on('ready', () => {
+    //This console will indicate that bot successfully deployed or build.
     console.log('XeNDeR Bot is running');
     client.user.setActivity("!help - get commands.");
 });
