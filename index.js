@@ -126,11 +126,11 @@ client.on("message", async(message) => {
             url: 'https://github.com/Xender007/xender-discord-bot',
             author: {
                 name: `XeNDeR's BoT Commands`,
-                icon_url: 'https://github.com/Xender007/xender-discord-bot/blob/main/assets/xender-bot-logo.jpg',
+                icon_url: 'https://www.pngarea.com/pngm/122/7622863_anime-logo-png-one-piece-symbol-png-png.png',
             },
             description: `Welcome XeNDeR's Server! Hope you having a great day`,
             thumbnail: {
-                url: 'https://github.com/Xender007/xender-discord-bot/blob/main/assets/xender-bot-logo.jpg',
+                url: 'https://www.pngarea.com/pngm/122/7622863_anime-logo-png-one-piece-symbol-png-png.png',
             },
             fields: [
                 {
@@ -155,7 +155,7 @@ client.on("message", async(message) => {
             timestamp: new Date(),
             footer: {
                 text: '`Bot Creator`  `XeNDeR`',
-                icon_url: 'https://github.com/Xender007/xender-discord-bot/blob/main/assets/xender-bot-logo.jpg',
+                icon_url: 'https://www.pngarea.com/pngm/122/7622863_anime-logo-png-one-piece-symbol-png-png.png',
             },
         };
         
