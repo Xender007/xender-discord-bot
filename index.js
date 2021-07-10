@@ -1,6 +1,8 @@
 const { executionAsyncResource } = require('async_hooks');
 const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
+require('dotenv/config');
+
  
 const { YTSearcher } = require('ytsearcher');
  
