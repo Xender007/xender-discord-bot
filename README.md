@@ -1,8 +1,6 @@
 # Xender-Discord-Bot
 
-  <p>
   **This is bot you can use in your server have some fun!**
-  </p>
 
 - Object-oriented
 - Predictable abstractions
