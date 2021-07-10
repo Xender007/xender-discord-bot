@@ -5,7 +5,14 @@ require('dotenv/config');
 
  
 const { YTSearcher } = require('ytsearcher');
- 
+
+//For Heroku api key's are hidden in heroku/settings -> Config Vars
+//Update it there for cloud use...If want to use locally create .env file and place the keys like below
+//for that run "npm dotenv install" to access .env files 
+//type require('dotenv/config'); in main.js file
+//youtube_api = <Your token> (without any quotes)
+//bot_api = <discord token> (without any quotes)
+
 const searcher = new YTSearcher({
     key: process.env.youtube_api,
     revealed: true
