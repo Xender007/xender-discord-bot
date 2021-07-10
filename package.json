@@ -9,8 +9,6 @@
   "author": "XeNDeR",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/node-pre-gyp": "^0.2.0",
-    "@discordjs/opus": "^0.4.0",
     "chalk": "^4.1.0",
     "discord-player": "^3.4.0",
     "discord.js": "^12.5.1",
