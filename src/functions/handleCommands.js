@@ -4,7 +4,7 @@ const fs = require('node:fs');
 require('dotenv/config');
 
 // Place your client and guild ids here
-// const clientId = '815527402842226710';
+ const clientId = '815527402842226710';
 // const guildId = '543841774976892928';
 
 module.exports = (client) => {
