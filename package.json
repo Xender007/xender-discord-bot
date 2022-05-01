@@ -1,31 +1,26 @@
 {
-  "name": "discordbot",
-  "version": "1.0.0",
-  "description": "This is a custom bot for discord",
-  "main": "index.js",
+  "name": "xender-discord-bot",
+  "version": "1.1.0",
+  "description": "This is discord bot using latest discord commands",
+  "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xender007/xender-discord-bot.git"
+  },
   "author": "XeNDeR",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xender007/xender-discord-bot/issues"
+  },
+  "homepage": "https://github.com/Xender007/xender-discord-bot#readme",
   "dependencies": {
-    "@discordjs/node-pre-gyp": "^0.4.0",
-    "@discordjs/opus": "^0.5.3",
-    "chalk": "^4.1.0",
-    "discord-player": "^3.4.0",
-    "discord.js": "^12.5.1",
-    "dotenv": "^10.0.0",
-    "jsdom": "^16.4.0",
-    "merge-options": "^3.0.4",
-    "node-addon-api": "^3.1.0",
-    "node-fetch": "^2.6.1",
-    "node-gyp": "^7.1.2",
-    "parse-ms": "^2.1.0",
-    "reverbnation-scraper": "^2.0.0",
-    "soundcloud-scraper": "^4.0.3",
-    "spotify-url-info": "^2.2.0",
-    "youtube-sr": "^4.0.3",
-    "ytdl-core": "^4.9.1",
-    "ytsearcher": "^1.2.3"
+    "@discordjs/builders": "^0.13.0",
+    "@discordjs/rest": "^0.4.1",
+    "discord-api-types": "^0.32.0",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
   }
 }
