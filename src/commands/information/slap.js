@@ -19,7 +19,7 @@ module.exports = {
         if (interaction.options.getSubcommand() === "user") {
 
             const Target = interaction.options.getUser('target');
-            await interaction.reply({ content: `Succesfully slapped ${Target.username}`, ephemeral: false });
+            await interaction.reply({ content: `Succesfully slapped <@${Target.id}>`, ephemeral: false });
         }
 
 
