@@ -20,7 +20,7 @@ module.exports = {
 
             const target = interaction.options.getUser('target');
             const author = interaction.member.user.id;
-            await interaction.reply({ content: `<@${author}> Succesfully slapped <@${target.id}>`, ephemeral: false });
+            await interaction.reply({ content: `<@${author}> Succesfully slapped <@${target.id}>`, ephemeral: true });
         }
 
 
