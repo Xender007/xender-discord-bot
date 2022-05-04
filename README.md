@@ -10,4 +10,4 @@
 ## About
 
 **This is a discord bot created just to explore discord bot application**
-**Node.js 16.0.0 or newer is required.**  
+**Node.js 16.0.0 or newer is required. **  
