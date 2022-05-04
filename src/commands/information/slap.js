@@ -17,7 +17,7 @@ module.exports = {
         const mentionedUserAvatarURL = interaction.options.getMember('target').user.displayAvatarURL({format : "png"});
         const authorUserAvatarURL = interaction.user.displayAvatarURL({format : "png"});
 
-        const image = await Canvas.slap(mentionedUserAvatarURL, authorUserAvatarURL);
+        const image = await Canvas.slap(authorUserAvatarURL, mentionedUserAvatarURL);
         const attachment = new MessageAttachment(image, 'image.png')
 
         await interaction.reply({ content: `<@${author.user.id}> Succesfully slapped <@${target.id}>`, files: [attachment] , ephemeral: false });
