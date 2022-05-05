@@ -49,7 +49,7 @@ module.exports = {
         const attachment = new MessageAttachment(canvas.toBuffer(), 'slap-image.png');
 
   
-        await interaction.reply({ content: `<@${author.user.id}>  slapped <@${target.id}>`, files: [attachment] , ephemeral: true });
+        await interaction.reply({ content: `<@${author.user.id}>  slapped <@${target.id}>`, files: [attachment] , ephemeral: false });
 
     },
 
