@@ -38,18 +38,29 @@ module.exports = {
         // Draw a rectangle with the dimensions of the entire canvas
 	    context.strokeRect(0, 0, canvas.width, canvas.height);
 
-        const authorUserAvatarURL = await Canvas.loadImage(interaction.user.displayAvatarURL({ format: 'jpg' }));
-        context.drawImage(authorUserAvatarURL, 440, 20, 110, 110);
 
-        const mentionedUserAvatarURL = await Canvas.loadImage(interaction.options.getMember('target').user.displayAvatarURL({format : "jpg"}));
-        context.drawImage(mentionedUserAvatarURL, 160, 40, 85, 85);
+        if(interaction.options.getMember('target').user.id === '815527402842226710') {
+            const authorUserAvatarURL = await Canvas.loadImage(interaction.user.displayAvatarURL({ format: 'jpg' }));
+            context.drawImage(authorUserAvatarURL, 160, 40, 85, 85);
+    
+            const mentionedUserAvatarURL = await Canvas.loadImage(interaction.options.getMember('target').user.displayAvatarURL({format : "jpg"}));
+            context.drawImage(mentionedUserAvatarURL, 440, 20, 110, 110);
 
-        
-        // Use the helpful Attachment class structure to process the file for you
-        const attachment = new MessageAttachment(canvas.toBuffer(), 'slap-image.png');
+            const attachment = new MessageAttachment(canvas.toBuffer(), 'slap-image.png');
+            await interaction.reply({ content: `You can't slap almighty <@${target.id}>, Instead <@${author.user.id}> got a slap!! `, files: [attachment] , ephemeral: false });
+        }
+        else {
+            const authorUserAvatarURL = await Canvas.loadImage(interaction.user.displayAvatarURL({ format: 'jpg' }));
+            context.drawImage(authorUserAvatarURL, 440, 20, 110, 110);
+    
+            const mentionedUserAvatarURL = await Canvas.loadImage(interaction.options.getMember('target').user.displayAvatarURL({format : "jpg"}));
+            context.drawImage(mentionedUserAvatarURL, 160, 40, 85, 85);
 
-  
-        await interaction.reply({ content: `<@${author.user.id}>  slapped <@${target.id}>`, files: [attachment] , ephemeral: false });
+            // Use the helpful Attachment class structure to process the file for you
+            const attachment = new MessageAttachment(canvas.toBuffer(), 'slap-image.png');
+            await interaction.reply({ content: `LOL !! <@${author.user.id}> just slapped <@${target.id}>`, files: [attachment] , ephemeral: false });
+
+        }
 
     },
 
