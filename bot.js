@@ -21,6 +21,9 @@ const commandFiles = fs.readdirSync('./src/commands');
       require(`./src/functions/${file}`)(client);
     }
 
+    process.on('unhandledRejection', error => {
+      console.log('error:', error);
+    });
     client.handleEvents(eventFiles, "./src/events");
     client.handleCommands(commandFiles, "./src/commands");
     client.login(process.env.bot_api);
